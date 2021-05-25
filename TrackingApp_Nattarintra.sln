@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackingApp_Nattarintra", "TrackingApp_Nattarintra\TrackingApp_Nattarintra.csproj", "{0BF78401-C55C-4669-98BC-4A8B996BAC0E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BF78401-C55C-4669-98BC-4A8B996BAC0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BF78401-C55C-4669-98BC-4A8B996BAC0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BF78401-C55C-4669-98BC-4A8B996BAC0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BF78401-C55C-4669-98BC-4A8B996BAC0E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7B87979E-79C0-4DB6-84E9-739E44762FB2}
+	EndGlobalSection
+EndGlobal
