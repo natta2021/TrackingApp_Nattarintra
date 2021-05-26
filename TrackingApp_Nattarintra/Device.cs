@@ -8,14 +8,15 @@ namespace TrackingApp_Nattarintra
 {
     class Device
     {
-        public Device(string deviceCategory, int itemId)
+        public Device(string deviceCategory)
         {
             DeviceCategory = deviceCategory;
-            ItemId = itemId;
+           
         }
 
         public int Id { get; set; }
         public string DeviceCategory { get; set; }
-        public int ItemId { get; set; }
+        public int AddressId { get; set; } // Shop / Address Id
+        public Location Location { get; set; } // Refer to Location class
     }
 }

@@ -21,6 +21,8 @@ namespace TrackingApp_Nattarintra
         public string ItemName { get; set; } // BD column name complain invalid column name?
         public int Price { get; set; }
         public DateTime Purchasedate { get; set; } // BD column name complain invalid column name?
-        public int AddressId { get; set; }
+        public int AddressId { get; set; } // Shop / Address Id
+        public Location Location { get; set; } // Refer to Location class
+
     }
 }

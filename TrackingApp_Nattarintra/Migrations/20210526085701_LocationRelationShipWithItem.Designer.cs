@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TrackingApp_Nattarintra;
 
 namespace TrackingApp_Nattarintra.Migrations
 {
     [DbContext(typeof(ProductContext))]
-    partial class ProductContextModelSnapshot : ModelSnapshot
+    [Migration("20210526085701_LocationRelationShipWithItem")]
+    partial class LocationRelationShipWithItem
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,9 +27,6 @@ namespace TrackingApp_Nattarintra.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("AddressId")
-                        .HasColumnType("int");
 
                     b.Property<string>("DeviceCategory")
                         .HasColumnType("nvarchar(max)");
@@ -88,11 +87,9 @@ namespace TrackingApp_Nattarintra.Migrations
 
             modelBuilder.Entity("TrackingApp_Nattarintra.Device", b =>
                 {
-                    b.HasOne("TrackingApp_Nattarintra.Location", "Location")
+                    b.HasOne("TrackingApp_Nattarintra.Location", null)
                         .WithMany("Devices")
                         .HasForeignKey("LocationId");
-
-                    b.Navigation("Location");
                 });
 
             modelBuilder.Entity("TrackingApp_Nattarintra.Item", b =>

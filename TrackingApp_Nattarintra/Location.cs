@@ -8,14 +8,18 @@ namespace TrackingApp_Nattarintra
 {
     class Location
     {
-        public Location(string shopAddress, int itemId)
+        public Location(string shopAddress)
         {
             ShopAddress = shopAddress;
-            ItemId = itemId;
+            
         }
 
         public int Id { get; set; }
         public string ShopAddress { get; set; }
-        public int ItemId { get; set; }
+        
+        public List<Item> Items { get; set; } // refer to Item class
+        public List<Device> Devices { get; set; } // refer to Device class
+
+
     }
 }

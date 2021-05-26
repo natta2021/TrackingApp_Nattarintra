@@ -10,23 +10,51 @@ namespace TrackingApp_Nattarintra
         {
             Console.WriteLine("Wellcome to Nattarintra AB Product!");
             ProductContext db = new ProductContext();
-            List<Item> items = db.Items.ToList();
 
-            // CRUD
-            // CREATE
-            Item itemCreate = new Item("Iphone11", 299, Convert.ToDateTime("2021-05-04"), 1);
-            db.Items.Add(itemCreate);
+            Location shopLocations = new Location("Denmark");
+            db.Locations.Add(shopLocations);
             db.SaveChanges();
 
-            //READ
-            Item itemRead = db.Items.FirstOrDefault();
+            List<Item> items = new List<Item>()
+            {
+                 new Item("Iphone11", 299, Convert.ToDateTime("2020-04-04"), 1),
+                 new Item("Iphone12", 399, Convert.ToDateTime("2021-05-04"), 1),
+                 new Item("Iphone9", 199, Convert.ToDateTime("2018-03-04"), 1),
+            };
 
-            // UPDATE 
-            Item itemUpdate = db.Items.Where(item => item.Price.Equals(199)).FirstOrDefault();
-            itemUpdate.ItemName = "Nokia";
-            itemUpdate.Price = 150;
-            db.Items.Update(itemUpdate);
+            List<Device> devices = new List<Device>()
+            {
+                new Device("Mobile Phones"),
+                new Device("Desktop"),
+            };
+
+            shopLocations.Items = new List<Item>();
+            shopLocations.Items.AddRange(items);
+            shopLocations.Devices = new List<Device>();
+            shopLocations.Devices.AddRange(devices);
+            db.Locations.Add(shopLocations);
             db.SaveChanges();
+
+
+            Console.ReadLine();
+
+            /* List<Item> items = db.Items.ToList();
+
+             // CRUD
+             // CREATE
+             Item itemCreate = new Item("Iphone11", 299, Convert.ToDateTime("2021-05-04"), 1);
+             db.Items.Add(itemCreate);
+             db.SaveChanges();
+
+             //READ
+             Item itemRead = db.Items.FirstOrDefault();
+
+             // UPDATE 
+             Item itemUpdate = db.Items.Where(item => item.Price.Equals(299)).FirstOrDefault();
+             itemUpdate.ItemName = "Nokia";
+             itemUpdate.Price = 150;
+             db.Items.Update(itemUpdate);
+             db.SaveChanges();*/
 
             // DELETE
             /*Item itemDelete = db.Items.Where(item => item.Id == 1).FirstOrDefault();
@@ -34,9 +62,9 @@ namespace TrackingApp_Nattarintra
             db.SaveChanges();*/
 
 
+            // Console.ReadLine();
 
 
-            Console.ReadLine();
 
             /*
             Item items1= new Item("Iphone11", 299, Convert.ToDateTime("2021-05-04"),1);
